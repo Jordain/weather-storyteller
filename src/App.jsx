@@ -35,11 +35,7 @@ const App = () => {
       setWeatherData(weatherJson);
 
       // Generate weather story
-      const storyPrompt = `Create a short, creative, and evocative weather story for ${city}. 
-        Current weather: ${weatherJson.list[0].weather[0].description}, temperature: ${weatherJson.list[0].main.temp}°C, 
-        wind: ${weatherJson.list[0].wind.speed} m/s, humidity: ${weatherJson.list[0].main.humidity}%. 
-        The 5-day forecast includes: ${weatherJson.list.map(item => item.weather[0].description).join(', ')}. 
-        Interpret these conditions in an imaginative way, going beyond a simple factual report.`;
+      const storyPrompt = `Create a short, creative, and evocative weather story for ${city}. \n        Current weather: ${weatherJson.list[0].weather[0].description}, temperature: ${weatherJson.list[0].main.temp}°C, \n        wind: ${weatherJson.list[0].wind.speed} m/s, humidity: ${weatherJson.list[0].main.humidity}%. \n        The 5-day forecast includes: ${weatherJson.list.map(item => item.weather[0].description).join(', ')}. \n        Interpret these conditions in an imaginative way, going beyond a simple factual report.`;
 
       const geminiResponse = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiApiKey}`,
@@ -130,11 +126,7 @@ const App = () => {
           </div>
         )}
       </div>
-      <div className="mt-6 text-xs text-gray-500 text-center max-w-md leading-relaxed">
-        <p>
-          Remember to replace <code className="font-mono bg-gray-200 p-1 rounded">'YOUR_OPENWEATHERMAP_API_KEY'</code> and <code className="font-mono bg-gray-200 p-1 rounded">'YOUR_GEMINI_API_KEY'</code> in the <code className="font-mono bg-gray-200 p-1 rounded">App.jsx</code> file with your actual API keys.
-        </p>
-      </div>
+      
     </div>
   );
 };
