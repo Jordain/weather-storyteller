@@ -7,8 +7,8 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const openWeatherMapApiKey = '87f2ab6d6a14e5c905283aef46c53d07'; // Replace with your OpenWeatherMap API key
-  const geminiApiKey = 'AIzaSyDaY9nTVokNS29t0xhNpklNXkto4C_AmmA'; // Replace with your Gemini API key
+  const openWeatherMapApiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
+  const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   const fetchWeatherAndStory = async () => {
     if (!city) {
