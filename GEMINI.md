@@ -24,7 +24,14 @@ This document provides essential information for the Gemini CLI agent to effecti
 - **Build for Production:** `npm run build` (run from `weather-storyteller-vite` directory)
 
 ## API Key Information
-- API keys for OpenWeatherMap and Gemini are placeholders within `src/App.jsx`. Users must replace `'YOUR_OPENWEATHERMAP_API_KEY'` and `'YOUR_GEMINI_API_KEY'` with their actual keys for the application to function correctly.
+- API keys for OpenWeatherMap and Gemini are managed through a local `.env` file. To run the application, create a `.env` file in the root of the project and add the following variables:
+
+  ```
+  VITE_OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
+  VITE_GEMINI_API_KEY=your_gemini_api_key
+  ```
+
+- An `.env.example` file is provided as a template. The `.env` file is included in `.gitignore` and should not be committed to version control.
 
 ## Project Conventions
 - **Component Structure:** Functional components using React Hooks.
